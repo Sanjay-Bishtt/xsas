@@ -1,133 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Kielian 💖</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kielian 💖</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 20px;
+    position: relative;
+  }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffdde1, #fbb8b8);
-      color: #333;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+  .container {
+    max-width: 450px;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 12px 25px rgba(214,51,108,0.2);
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
 
-    .container {
-      max-width: 500px;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 2s ease-in-out;
-    }
+  h1 { color: #d6336c; margin-bottom: 10px; font-size: 2rem; animation: fadeInText 1s ease-in-out; }
+  p { color: #6e0e35; font-size: 1.1rem; margin-bottom: 20px; animation: fadeInText 1.5s ease-in-out; }
 
-    h1 {
-      font-size: 2.5rem;
-      color: #ff6f91;
-      margin-bottom: 15px;
-    }
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeInText 2s ease-in-out;
+  }
 
-    p {
-      font-size: 1.2rem;
-      color: #444;
-    }
+  .images img {
+    width: 100%;
+    border-radius: 20px;
+    height: auto;
+    box-shadow: 0 6px 15px rgba(214,51,108,0.3);
+    transition: transform 0.3s;
+  }
 
-    img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      margin: 20px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      animation: fadeInImage 2s ease-in-out;
-    }
+  .images img:hover {
+    transform: scale(1.03);
+  }
 
-    button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #ff6f91;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  .reveal-btn {
+    margin: 20px 0;
+    padding: 12px 25px;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(255,105,180,0.3);
+    transition: background 0.3s, transform 0.3s;
+  }
 
-    button:hover {
-      background-color: #ff4e78;
-    }
+  .reveal-btn:hover {
+    background-color: #e0559e;
+    transform: scale(1.05);
+  }
 
-    #secretMessage {
-      display: none;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      animation: fadeInText 2s ease-in-out;
-    }
+  .message {
+    display: none;
+    background: #ffd6e8;
+    color: #5e1137;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(214,51,108,0.3);
+    animation: fadeInText 2s ease-in-out;
+    margin-top: 15px;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .floating-heart {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: floatUp 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
 
-    @keyframes fadeInImage {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
+  @keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+  @keyframes fadeInText { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
+  @keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-600px) rotate(360deg); opacity: 0; }
+  }
 
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p, button, #secretMessage {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  @media (max-width: 500px) {
+    h1 { font-size: 1.8rem; }
+    p, .message, .reveal-btn { font-size: 1rem; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Hey Kielian 💐</h1>
-    <p>Someone thinks you're absolutely amazing...</p>
+<div class="container">
+  <h1>Hey Kielian 💐</h1>
+  <p>Click below to see something special for you...</p>
 
-    <!-- You can replace this image with any you like -->
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Flowers for you" />
-
-    <button onclick="showMessage()">Click to reveal 💌</button>
-
-    <div id="secretMessage">
-      <p>
-        Just wanted to say...<br>
-        <strong>You brighten every space you walk into. ✨</strong><br>
-        – from someone who secretly admires you 🌹
-      </p>
-    </div>
+  <div class="images">
+    <img src="i1.jpg" alt="Kielian 1">
+    <img src="i2.jpg" alt="Kielian 2">
+    <img src="i3.jpg" alt="Kielian 3">
   </div>
 
-  <script>
-    function showMessage() {
-      const msg = document.getElementById('secretMessage');
-      msg.style.display = 'block';
-    }
-  </script>
+  <button class="reveal-btn" onclick="showMessage()">Click Me 💌</button>
+
+  <div class="message" id="secretMessage">
+    You light up every room you enter, and I can’t stop thinking about how amazing you are. 💖<br>
+    Every smile of yours is magic, and every moment with you is a dream. 🌹
+  </div>
+</div>
+
+<!-- Floating hearts -->
+<div id="hearts"></div>
+
+<!-- Background music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  Your browser does not support audio playback.
+</audio>
+
+<script>
+  function showMessage() {
+    const msg = document.getElementById('secretMessage');
+    msg.style.display = 'block';
+    msg.scrollIntoView({behavior:'smooth'});
+  }
+
+  // Generate floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('floating-heart');
+    heart.textContent = '💖';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (15 + Math.random()*20) + 'px';
+    heart.style.animationDuration = (4 + Math.random()*3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 7000);
+  }
+  setInterval(createHeart, 500);
+</script>
 
 </body>
 </html>
+
