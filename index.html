@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Kielian 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #fbb8b8);
+      color: #333;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff6f91;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: fadeInImage 2s ease-in-out;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #ff6f91;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff4e78;
+    }
+
+    #secretMessage {
+      display: none;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      animation: fadeInText 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInImage {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p, button, #secretMessage {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hey Kielian 💐</h1>
+    <p>Someone thinks you're absolutely amazing...</p>
+
+    <!-- You can replace this image with any you like -->
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Flowers for you" />
+
+    <button onclick="showMessage()">Click to reveal 💌</button>
+
+    <div id="secretMessage">
+      <p>
+        Just wanted to say...<br>
+        <strong>You brighten every space you walk into. ✨</strong><br>
+        – from someone who secretly admires you 🌹
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('secretMessage');
+      msg.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
